@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "frontend/expense-tracker/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+   
+    {
+      "src": "/(.*)",
+      "dest": "frontend/expense-tracker/$1"
+    }
+  ]
+}
