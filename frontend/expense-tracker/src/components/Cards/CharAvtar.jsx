@@ -1,9 +1,14 @@
 import React from "react";
-const CharAvatar = ({ fullName, width, height, style }) => {
-    return <div className={`${width || 'w-12'} ${style || ''} flexm item-center justify-center rounded-full text-gray-900 font-medium bg-gray-100`}>
-    {getInitials(fullName || "")}
-    </div>;
+const CharAvatar = ({ fullName = "", width = "w-10", height = "h-10", style = "" }) => {
+  const firstLetter = fullName?.charAt(0)?.toUpperCase() || "?";
 
+  return (
+    <div
+      className={`flex items-center justify-center bg-purple-600 text-white rounded-full ${width} ${height} ${style}`}
+    >
+      {firstLetter}
+    </div>
+  );
 };
 
 export default CharAvatar;
